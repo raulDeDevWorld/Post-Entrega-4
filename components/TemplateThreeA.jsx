@@ -47,7 +47,7 @@ function TemplateFour({ color, topic, post1, post2, post3, post4, description1, 
                 
                 {userDB && dataForDate.length > 0 && dataForDate.map((i, index) =>
 
-                    <div key={index} >
+                    <>
                     {    userDB[topic]["Posts"] && userDB[topic]["Posts"][`PostImage_${i}`] && userDB[topic]["Posts"][`PostImage_${i}`].state !== undefined && userDB[topic]["Posts"][`PostImage_${i}`].state === 'Publicado' && router.pathname !== "/Admin" &&
 
                         <div key={index} >
@@ -63,7 +63,7 @@ function TemplateFour({ color, topic, post1, post2, post3, post4, description1, 
                         
                        { 
                        userDB[topic]["Posts"] && userDB[topic]["Posts"][`PostImage_${i}`] && router.pathname == "/Admin" &&
-                       <div >
+                       <div key={index} >
                             {userDB[topic]["Posts"][`PostImage_${i}`]['content'] ? '' : <span className={styles.inDevelop}>{router.pathname !== "/Admin" && ''}</span>}
                             {router.pathname == "/Admin" && <span className={styles.datePost} onClick={() => handlerClickEnlace({ i, carpeta: 'Post' })}>{`${new Date(userDB[topic].Posts[`PostImage_${i}`].fecha).getDate()}-${months[new Date(userDB[topic].Posts[`PostImage_${i}`].fecha).getMonth()]} ${new Date(userDB[topic].Posts[`PostImage_${i}`].fecha).getHours()}:${new Date(userDB[topic].Posts[`PostImage_${i}`].fecha).getMinutes()}`}</span>}
 
@@ -73,7 +73,7 @@ function TemplateFour({ color, topic, post1, post2, post3, post4, description1, 
 
                             {userDB[topic]["Posts"][`PostImage_${i}`]['description'] && <p className={styles.description}>{userDB[topic]["Posts"][`PostImage_${i}`]['description']}</p>}
                         </div>}
-                    </ div >
+                    </>
                 )}
             </div>
 
