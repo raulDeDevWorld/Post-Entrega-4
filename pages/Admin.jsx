@@ -13,7 +13,6 @@ import BannerRight from '../components/BannerRight'
 import Modal from '../components/Modal'
 
 import Section from '../components/Section'
-import Date from '../components/Date'
 import Header from '../components/Header'
 
 import styles from '../styles/Home.module.css'
@@ -69,6 +68,82 @@ function Admin() {
   function resetAutomatico() {
     writeUserData(`/`, { login: !userDB.login }, setUserSuccess)
   }
+
+  userDB['Cultura'] && Object.keys(userDB['Cultura'].Posts).map((i)=>{
+    let rute = `Cultura/Posts/${i}`
+  userDB['Cultura'].Posts[i].fecha && writeUserData(rute,{fecha: new Date(userDB['Cultura'].Posts[i].fecha).getTime()})
+    })
+
+
+
+
+    userDB['Deportes'] && Object.keys(userDB['Deportes'].Posts).map((i)=>{
+      let rute = `Deportes/Posts/${i}`
+    userDB['Deportes'].Posts[i].fecha && writeUserData(rute,{fecha: new Date(userDB['Deportes'].Posts[i].fecha).getTime()})
+      })
+
+
+
+
+      userDB['Economia'] && Object.keys(userDB['Economia'].Posts).map((i)=>{
+        let rute = `Economia/Posts/${i}`
+      userDB['Economia'].Posts[i].fecha && writeUserData(rute,{fecha: new Date(userDB['Economia'].Posts[i].fecha).getTime()})
+        })
+
+
+
+
+
+
+ userDB['Empresarial'] && Object.keys(userDB['Empresarial'].Posts).map((i)=>{
+  let rute = `Empresarial/Posts/${i}`
+userDB['Empresarial'].Posts[i].fecha && writeUserData(rute,{fecha: new Date(userDB['Empresarial'].Posts[i].fecha).getTime()})
+  })
+
+
+
+  userDB['GestionDeGobierno'] && Object.keys(userDB['GestionDeGobierno'].Posts).map((i)=>{
+    let rute = `GestionDeGobierno/Posts/${i}`
+  userDB['GestionDeGobierno'].Posts[i].fecha && writeUserData(rute,{fecha: new Date(userDB['GestionDeGobierno'].Posts[i].fecha).getTime()})
+    })
+    
+
+
+    userDB['Internacional'] && Object.keys(userDB['Internacional'].Posts).map((i)=>{
+      let rute = `Internacional/Posts/${i}`
+    userDB['Internacional'].Posts[i].fecha && writeUserData(rute,{fecha: new Date(userDB['Internacional'].Posts[i].fecha).getTime()})
+      })
+
+
+
+      userDB['Politica'] && Object.keys(userDB['Politica'].Posts).map((i)=>{
+        let rute = `Politica/Posts/${i}`
+      userDB['Politica'].Posts[i].fecha && writeUserData(rute,{fecha: new Date(userDB['Politica'].Posts[i].fecha).getTime()})
+        })
+
+
+
+        userDB['Salud'] && Object.keys(userDB['Salud'].Posts).map((i)=>{
+          let rute = `Salud/Posts/${i}`
+        userDB['Salud'].Posts[i].fecha && writeUserData(rute,{fecha: new Date(userDB['Salud'].Posts[i].fecha).getTime()})
+          })
+
+
+
+
+          userDB['Seguridad'] && Object.keys(userDB['Seguridad'].Posts).map((i)=>{
+            let rute = `Seguridad/Posts/${i}`
+          userDB['Seguridad'].Posts[i].fecha && writeUserData(rute,{fecha: new Date(userDB['Seguridad'].Posts[i].fecha).getTime()})
+            })
+
+
+
+            userDB['Sociedad'] && Object.keys(userDB['Sociedad'].Posts).map((i)=>{
+              let rute = `Sociedad/Posts/${i}`
+            userDB['Sociedad'].Posts[i].fecha && writeUserData(rute,{fecha: new Date(userDB['Sociedad'].Posts[i].fecha).getTime()})
+              })
+
+
 
   useEffect(() => {
 

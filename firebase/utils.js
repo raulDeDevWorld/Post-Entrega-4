@@ -144,8 +144,10 @@ async function getIndexData(setUserData, date, minDate, setUserSuccess) {
     // get(query(ref(db, `${i}/Posts`), limitToLast(10), orderByChild('fecha'), ))
 
     console.log(parseInt(date))
-    get(query(ref(db, `${i}/Posts`), limitToLast(10), orderByChild('fecha'), startAt(minDate), endAt(date)))
-      .then(async (snapshot) => {
+    // get(query(ref(db, `${i}/Posts`), limitToLast(10), orderByChild('fecha'), startAt(minDate), endAt(date)))
+
+     get(query(ref(db, `${i}/Posts`), limitToLast(10), orderByChild('fecha'), startAt(minDate), endAt(date)))
+    .then(async (snapshot) => {
 
         if (snapshot.exists()) {
           let snap = snapshot.val()
